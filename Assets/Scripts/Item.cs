@@ -7,6 +7,7 @@ public class Item : ScriptableObject
 {
     public string itemName;
     public Sprite itemArt;
+    public Sprite outlineArt;
 
     public int goldCost;
     public int sellAmount;

@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f068a589cc2fa7418ff9453ddc6cb74, type: 3}
+  m_Name: 0450 Null Magic Mantle
+  m_EditorClassIdentifier: 
+  itemName: Null Magic Mantle
+  itemArt: {fileID: 21300000, guid: edfc81f578e2faa4cb9bf036d613433a, type: 3}
+  outlineArt: {fileID: 21300000, guid: 9656e0c0a4047a5419df1bd0ec96b276, type: 3}
+  goldCost: 450
+  sellAmount: 315
+  AD: 0
+  AP: 0
+  armor: 0
+  magic_resist: 25
+  health: 0
+  movespeedFlat: 0
+  movespeedPercent: 0
+  crit_chance: 0
+  attack_speed: 0
+  mana: 0
+  cooldown_reduce: 0
