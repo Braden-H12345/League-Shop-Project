@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class InventoryDisplay : MonoBehaviour
 {
+    //uses a different public image for each inventory slot, this way there can be different items in each slot
     public Image slot1Visuals;
     public Image slot2Visuals;
     public Image slot3Visuals;
@@ -12,7 +13,10 @@ public class InventoryDisplay : MonoBehaviour
     public Image slot5Visuals;
     public Image slot6Visuals;
 
+    //starting visuals of the item slots, basically just an empty square, used to reset the visuals after selling an item
     public Sprite startingVisuals;
+    
+    // same reasoning here as with the visuals
     Item slot1 = null;
     Item slot2 = null;
     Item slot3 = null;
@@ -21,6 +25,7 @@ public class InventoryDisplay : MonoBehaviour
     Item slot6 = null;
     void Update()
     {
+        //if-else statement controlling each slot, uses count to determine if visuals should be active
         if (InventoryTrack.instance.items.Count >= 1)
         {
             slot1 = InventoryTrack.instance.items[0];
@@ -31,6 +36,8 @@ public class InventoryDisplay : MonoBehaviour
             slot1 = null;
             slot1Visuals.sprite = startingVisuals;
         }
+
+        //if nothing in the list for inventory, updates visuals to be the defaults
         if(InventoryTrack.instance.items.Count < 1)
         {
             slot2Visuals.sprite = startingVisuals;
@@ -91,6 +98,8 @@ public class InventoryDisplay : MonoBehaviour
         }
     }
 
+
+    //sell item function for each slot as they are triggered by buttons on each individual item slot
     public void sellItem1()
     {
         GoldControl.instance.SellItem(slot1);

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Scriptable objects are something I learned about while creating this project, very useful in creating item system
+
 [CreateAssetMenu(fileName = "New item", menuName = "Item")]
 public class Item : ScriptableObject
 {

@@ -10,6 +10,7 @@ public class BuildsInto : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //sets visuals off to start
         visualsToEnable.SetActive(false);
     }
 
@@ -19,6 +20,8 @@ public class BuildsInto : MonoBehaviour
         
     }
 
+
+    //if an item is detected to build into another, activates the image with the item that it builds into's artwork
     public void BuildsIntoActive(Item item)
     {
         if(item.buildsInto != null)

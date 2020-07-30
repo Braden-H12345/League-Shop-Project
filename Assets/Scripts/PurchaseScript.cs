@@ -19,6 +19,8 @@ public class PurchaseScript : MonoBehaviour
         }
     }
 
+
+    //Called from button press, performs inventory check before CheckForBuildFrom sends it to the buy function
     public void SendToBuildCheck()
     {
        GoldControl.instance.CheckForBuildFrom(item);

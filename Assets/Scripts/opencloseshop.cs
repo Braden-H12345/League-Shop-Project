@@ -16,6 +16,9 @@ public class opencloseshop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        //simply opens or closes the shop on proper key presses, uses bool to control if open
+
         if (shopOpen == false)
         {
             if (Input.GetKeyDown(KeyCode.R))

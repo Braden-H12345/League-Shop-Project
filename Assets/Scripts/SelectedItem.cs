@@ -30,11 +30,14 @@ public class SelectedItem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //visuals disabled at start
         visualsToEnable.SetActive(false);
     }
 
     private void Update()
     {
+        //updates the gold cost on the selected item, if item that the selected item builds from (for example dagger into zeal) is in
+        // inventory, updates cost on the selected item accordingly
         if (InventoryTrack.instance.items.Contains(item.buildsFrom1) || InventoryTrack.instance.items.Contains(item.buildsFrom2))
         {
 
@@ -54,10 +57,13 @@ public class SelectedItem : MonoBehaviour
             int normalCost = item.goldCost;
             itemCost.text = normalCost.ToString();
         }
+
+
         outline.sprite = item.outlineArt;
         artworkImage.sprite = item.itemArt;
         itemName.text = item.itemName;
 
+        //specific to cloak of agility as it was giving issues due to how the stats on the item are arranged
         if(item.itemName == "Cloak of Agility")
         {
             description.text = "20% crit chance";
@@ -135,7 +141,8 @@ public class SelectedItem : MonoBehaviour
     }
 
 
-
+    //if item is selected it activates this function, sets visuals of the righthand side of shop to be on
+    // allows user to see the item selected
     public void ItemActivated(Item itemActive)
     {
         itemIsSelected = true;
@@ -143,6 +150,7 @@ public class SelectedItem : MonoBehaviour
         visualsToEnable.SetActive(true);
     }
 
+    //returns what item is selected, used to help buy functionality
     public Item ReturnItem()
     {
         return item;

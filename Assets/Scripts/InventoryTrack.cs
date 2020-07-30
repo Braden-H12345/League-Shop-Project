@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class InventoryTrack : MonoBehaviour
 {
+    //singleton so there is only ever one inventory
     #region singleton
     public static InventoryTrack instance;
     void Awake()
@@ -23,6 +24,8 @@ public class InventoryTrack : MonoBehaviour
     {
        
     }
+
+    //simply adds item to items list, backbone of inventory system
     public void Add (Item item)
     {
         if (items.Count <= 5)
