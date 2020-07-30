@@ -17,6 +17,12 @@ public class InventoryTrack : MonoBehaviour
     #endregion
 
     public List<Item> items = new List<Item>();
+    
+
+    private void Start()
+    {
+       
+    }
     public void Add (Item item)
     {
         if (items.Count <= 5)
@@ -24,9 +30,9 @@ public class InventoryTrack : MonoBehaviour
             items.Add(item);
         }
     }
-    public void Remove(Item item)
-    {
-        items.Remove(item);
 
+    public void Remove(int index)
+    {
+        items.RemoveAt(index);
     }
 }

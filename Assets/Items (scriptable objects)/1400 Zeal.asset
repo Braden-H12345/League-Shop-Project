@@ -17,6 +17,9 @@ MonoBehaviour:
   outlineArt: {fileID: 21300000, guid: 9656e0c0a4047a5419df1bd0ec96b276, type: 3}
   goldCost: 1400
   sellAmount: 980
+  buildsInto: {fileID: 0}
+  buildsFrom1: {fileID: 11400000, guid: c6f9dfb49489cda47a8b715cf569d627, type: 2}
+  buildsFrom2: {fileID: 11400000, guid: 32f4963ea98865c4c80539b5e0642f44, type: 2}
   AD: 0
   AP: 0
   armor: 0

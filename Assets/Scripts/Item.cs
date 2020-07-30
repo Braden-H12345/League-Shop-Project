@@ -13,6 +13,9 @@ public class Item : ScriptableObject
     public int sellAmount;
 
     //Stats
+    public Item buildsInto = null;
+    public Item buildsFrom1 = null;
+    public Item buildsFrom2 = null;
     public int AD;
     public int AP;
     public int armor;

@@ -19,8 +19,8 @@ public class PurchaseScript : MonoBehaviour
         }
     }
 
-    public void SendToBuy()
+    public void SendToBuildCheck()
     {
-        GoldControl.instance.BuyItem(item);
+       GoldControl.instance.CheckForBuildFrom(item);
     }
 }
