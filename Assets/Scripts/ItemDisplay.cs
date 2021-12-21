@@ -22,15 +22,50 @@ public class ItemDisplay : MonoBehaviour
         {
 
             int tempGoldCost1 = item.goldCost;
-            if (InventoryTrack.instance.items.Contains(item.buildsFrom1))
+            if(item.buildsFrom1.itemName != item.buildsFrom2.itemName)
             {
-                tempGoldCost1 -= item.buildsFrom1.goldCost;
+                if (InventoryTrack.instance.items.Contains(item.buildsFrom1))
+                {
+                    tempGoldCost1 -= item.buildsFrom1.goldCost;
+                }
+                if (InventoryTrack.instance.items.Contains(item.buildsFrom2))
+                {
+                    tempGoldCost1 -= item.buildsFrom2.goldCost;
+                }
+                itemCost.text = tempGoldCost1.ToString();
             }
-            if (InventoryTrack.instance.items.Contains(item.buildsFrom2))
+            else
             {
-                tempGoldCost1 -= item.buildsFrom2.goldCost;
+                int count = 0;
+                foreach(Item curr in InventoryTrack.instance.items)
+                {
+                    if(curr.itemName == item.buildsFrom1.itemName)
+                    {
+                        count++;
+                    }
+                }
+                if(count == 1)
+                {
+                    if (InventoryTrack.instance.items.Contains(item.buildsFrom1))
+                    {
+                        tempGoldCost1 -= item.buildsFrom1.goldCost;
+                        itemCost.text = tempGoldCost1.ToString();
+                    }
+                }
+                else if(count >= 2)
+                {
+                    if (InventoryTrack.instance.items.Contains(item.buildsFrom1))
+                    {
+                        tempGoldCost1 -= item.buildsFrom1.goldCost;
+                    }
+                    if (InventoryTrack.instance.items.Contains(item.buildsFrom2))
+                    {
+                        tempGoldCost1 -= item.buildsFrom2.goldCost;
+                    }
+                    itemCost.text = tempGoldCost1.ToString();
+                }
+
             }
-            itemCost.text = tempGoldCost1.ToString();
         }
         if (!(InventoryTrack.instance.items.Contains(item.buildsFrom1) || InventoryTrack.instance.items.Contains(item.buildsFrom2)))
         {

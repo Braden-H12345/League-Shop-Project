@@ -81,19 +81,58 @@ public class GoldControl : MonoBehaviour
         {
 
             int tempGoldCost1 = item.goldCost;
-            if (InventoryTrack.instance.items.Contains(item.buildsFrom1))
+            if(item.buildsFrom1 != item.buildsFrom2)
             {
-                int tempIndex1 = InventoryTrack.instance.items.IndexOf(item.buildsFrom1);
-                InventoryTrack.instance.items.Remove(item.buildsFrom1);
-                tempGoldCost1 -= item.buildsFrom1.goldCost;
+                if (InventoryTrack.instance.items.Contains(item.buildsFrom1))
+                {
+                    int tempIndex1 = InventoryTrack.instance.items.IndexOf(item.buildsFrom1);
+                    InventoryTrack.instance.items.Remove(item.buildsFrom1);
+                    tempGoldCost1 -= item.buildsFrom1.goldCost;
+                }
+                if (InventoryTrack.instance.items.Contains(item.buildsFrom2))
+                {
+                    int tempIndex2 = InventoryTrack.instance.items.IndexOf(item.buildsFrom2);
+                    InventoryTrack.instance.items.Remove(item.buildsFrom2);
+                    tempGoldCost1 -= item.buildsFrom2.goldCost;
+                }
+                BuyItem(item, tempGoldCost1);
             }
-            if (InventoryTrack.instance.items.Contains(item.buildsFrom2))
+            else
             {
-                int tempIndex2 = InventoryTrack.instance.items.IndexOf(item.buildsFrom2);
-                InventoryTrack.instance.items.Remove(item.buildsFrom2);
-                tempGoldCost1 -= item.buildsFrom2.goldCost;
+                int count = 0;
+                foreach(Item currentItem in InventoryTrack.instance.items)
+                {
+                    if(currentItem == item.buildsFrom1)
+                    {
+                        count++;
+                    }
+                }
+                if(count == 1)
+                {
+                    if (InventoryTrack.instance.items.Contains(item.buildsFrom1))
+                    {
+                        int tempIndex1 = InventoryTrack.instance.items.IndexOf(item.buildsFrom1);
+                        InventoryTrack.instance.items.Remove(item.buildsFrom1);
+                        tempGoldCost1 -= item.buildsFrom1.goldCost;
+                    }
+                }
+                else if(count >= 2)
+                {
+                    if (InventoryTrack.instance.items.Contains(item.buildsFrom1))
+                    {
+                        int tempIndex1 = InventoryTrack.instance.items.IndexOf(item.buildsFrom1);
+                        InventoryTrack.instance.items.Remove(item.buildsFrom1);
+                        tempGoldCost1 -= item.buildsFrom1.goldCost;
+                    }
+                    if (InventoryTrack.instance.items.Contains(item.buildsFrom2))
+                    {
+                        int tempIndex2 = InventoryTrack.instance.items.IndexOf(item.buildsFrom2);
+                        InventoryTrack.instance.items.Remove(item.buildsFrom2);
+                        tempGoldCost1 -= item.buildsFrom2.goldCost;
+                    }
+                }
+                BuyItem(item, tempGoldCost1);
             }
-            BuyItem(item, tempGoldCost1);
         }
         if (!(InventoryTrack.instance.items.Contains(item.buildsFrom1) || InventoryTrack.instance.items.Contains(item.buildsFrom2)))
         {

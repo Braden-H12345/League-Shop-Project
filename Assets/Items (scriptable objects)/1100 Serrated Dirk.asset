@@ -19,7 +19,7 @@ MonoBehaviour:
   sellAmount: 770
   buildsInto: {fileID: 0}
   buildsFrom1: {fileID: 11400000, guid: e5c22856173ee4142ae92ed9b283697b, type: 2}
-  buildsFrom2: {fileID: 0}
+  buildsFrom2: {fileID: 11400000, guid: e5c22856173ee4142ae92ed9b283697b, type: 2}
   AD: 30
   AP: 0
   armor: 0
